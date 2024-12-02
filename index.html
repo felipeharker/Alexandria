@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Light grey background */
+            color: #000; /* Black text for all pages */
+        }
+        header {
+            background-image: url('file:///G:/Shared%20drives/ARIA%20Signs/_PUBLIC/GRASSHOPPER%20LIBRARY/Alexandria/00_Alexandria/Website/Sandbox/IMAGES/SANDBOX_Alexandria%20Logo%20A.svg'); /* Header image */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 0; /* Increased padding for a taller header */
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('file:///G:/Shared%20drives/ARIA%20Signs/_PUBLIC/GRASSHOPPER%20LIBRARY/Alexandria/00_Alexandria/Website/Sandbox/IMAGES/background%20header.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3; /* Lower opacity of background image */
+            z-index: -1; /* Ensures overlay is behind header content */
+        }
+        nav {
+            background: #35424a;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+        nav ul li a:hover {
+            background: #575d63;
+            border-radius: 5px;
+        }
+        section {
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 800px;
+            background: transparent; /* Removed background to avoid box effect */
+        }
+        footer {
+            background-image: url('file:///G:/Shared%20drives/ARIA%20Signs/_PUBLIC/GRASSHOPPER%20LIBRARY/Alexandria/00_Alexandria/Website/Sandbox/IMAGES/background%20header.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 20px;
+            opacity: 0.3; /* Lower opacity of footer background image */
+        }
+
+        /* Link color specific to Home page */
+        #home a {
+            color: #F47D48; /* Set link color to orange */
+            text-decoration: none;
+        }
+
+        #home a:hover {
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .image {
+            display: block;
+            margin: 20px auto; /* Center the image */
+            max-width: 80%; /* Adjust to fit page */
+        }
+
+        .small-text {
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+    <script>
+        // Function to handle section navigation
+        function showSection(id) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(id).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <!-- Header image only, no text -->
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showSection('home')">Home</a></li>
+            <li><a href="#about" onclick="showSection('about')">About Alexandria</a></li>
+            <li><a href="#installation-guide" onclick="showSection('installation-guide')">Installation Guide</a></li>
+            <li><a href="#how-to-use" onclick="showSection('how-to-use')">How to Use</a></li>
+            <li><a href="#faq" onclick="showSection('faq')">FAQ</a></li>
+            <li><a href="#release-notes" onclick="showSection('release-notes')">Release Notes</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Welcome to Alexandria</h2>
+        <p>Alexandria is a powerful plugin designed to enhance parametric design workflows with cutting-edge AI and design tools.</p>
+
+        <!-- Added text with links to other sections -->
+        <p><a href="#about" onclick="showSection('about')">Visit About Alexandria</a> to learn more about Alexandria.</p>
+
+        <p>To use Alexandria on your version of Grasshopper, please visit our <a href="#installation-guide" onclick="showSection('installation-guide')">Installation Guide</a>.</p>
+
+        <p>Visit our <a href="#how-to-use" onclick="showSection('how-to-use')">How to Use</a> page to see documentation on how to use Alexandria to design parametric shapes and patterns.</p>
+
+        <p>For any questions you may have, our <a href="#faq" onclick="showSection('faq')">FAQ</a> provides an overview of some topics related to Rhino, Grasshopper, and Alexandria.</p>
+
+        <p>For information about the latest version (and legacy versions) of Alexandria, see our <a href="#release-notes" onclick="showSection('release-notes')">Release Notes</a>.</p>
+    </section>
+
+    <!-- About Alexandria Section -->
+    <section id="about" class="hidden">
+        <h2>About Alexandria</h2>
+        <p>Alexandria is a collection of tools for Grasshopper for Rhino which allow users to input simple information such as an open/closed curve, a point, number slider, etc. and create complex 2D and 3D geometries, arrays, attractors, and patterns.</p>
+
+        <p>This is a living project, and it will continue to grow as we use it. The more we use it, the more it will grow. Below are a few places you can visit for help installing, using, and troubleshooting Alexandria. User feedback is encouraged, so please reach out to me with any questions, ideas, and suggestions you might have.</p>
+    </section>
+
+    <!-- Installation Guide Section -->
+    <section id="installation-guide" class="hidden">
+        <h2>Installation Guide</h2>
+        <p>Follow these instructions to install the latest release of Alexandria on your own device. We are currently in beta, so some features may be limited, or you may encounter issues. Rest assured we are working tirelessly to create a stable, functional public release of Alexandria as soon as possible.</p>
+
+        <h3>To install Alexandria on your own device:</h3>
+        <ol>
+            <li>Open an existing Rhino file, or create a new one.</li>
+            <img src="file:///G:/Shared%20drives/ARIA%20Signs/_PUBLIC/GRASSHOPPER%20LIBRARY/Alexandria/00_Alexandria/Website/Sandbox/IMAGES/RH%20Start%20Page.png" alt="Rhino Start Page" class="image">
+
+            <li>Once you have a Rhino file open, type "Grasshopper" into your command bar. This will open the Grasshopper for Rhino Plugin. Open an existing GH file, or create a new one.</li>
+            <img src="file:///G:/Shared%20drives/ARIA%20Signs/_PUBLIC/GRASSHOPPER%20LIBRARY/Alexandria/00_Alexandria/Website/Sandbox/IMAGES/GH%20start%20page.png" alt="GH Start Page" class="image">
+
+            <li>In Grasshopper go to File > Special Folders > User Object Folder</li>
+            <img src="file:///G:/Shared%20drives/ARIA%20Signs/_PUBLIC/GRASSHOPPER%20LIBRARY/Alexandria/00_Alexandria/Website/Sandbox/IMAGES/GH%20File%20Tab.png" alt="GH File Tab" class="image">
+
+            <li>Open a new File Explorer tab, unzip the file you downloaded from our website.</li>
+            <img src="file:///G:/Shared%20drives/ARIA%20Signs/_PUBLIC/GRASSHOPPER%20LIBRARY/Alexandria/00_Alexandria/Website/Sandbox/IMAGES/alexandria%20app%20ss.png" alt="Alexandria App Screenshot" class="image">
+
+            <li>Copy all the contents from the newly extracted folder into your User Objects Folder.</li>
+        </ol>
+
+        <p>Alexandria is now loaded onto your device and ready to use.</p>
+
+        <p class="small-text">*As Alexandria is updated, users must repeat this process to install the most current version of the app.</p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="hidden">
+        <h2>FAQ</h2>
+        <h3>What is a Grasshopper Definition?</h3>
+        <p>A Grasshopper definition is a collection of interconnected components that define a specific parametric process or design in Rhino. It consists of visual programming elements such as inputs (parameters), logic (components), and outputs (results), and allows users to create complex forms, structures, or behaviors by manipulating geometry and data. A Grasshopper definition can be thought of as a digital workflow that automatically updates in real-time as input values change.</p>
+
+        <h3>What is a Cluster within Grasshopper?</h3>
+        <p>A Cluster in Grasshopper is a way to group a set of components together into a single, reusable unit. This allows you to simplify your definition, improve organization, and create modular systems. Once components are inside a Cluster, they can be treated as a single component with its own inputs and outputs. Clusters are useful for creating custom sub-routines that you can use across different definitions without having to rebuild the logic each time.</p>
+
+        <h3>What is a Grasshopper Parameter? What Do They Do?</h3>
+        <p>Parameters in Grasshopper are the values that define the input or output of a component. They can be numbers, geometry, or other types of data, and they are crucial for manipulating and controlling the flow of information through your definition. The parameters control how a component behaves and interacts with other components. By changing the values of parameters, you can influence the resulting geometry, data, or behavior of the entire definition. Parameters can be dynamic, allowing the design to adapt to changes.</p>
+
+        <h3>What Kinds of Parameters Can Be Used as Input?</h3>
+        <p>There are many types of parameters that can be used as inputs in Grasshopper. Some common ones include:</p>
+        <ul>
+            <li>Number sliders: Used for numerical input, such as defining dimensions, angles, or other scalar values.</li>
+            <li>Geometry: Points, curves, surfaces, and meshes that represent spatial objects in Rhino.</li>
+            <li>Vectors: 2D or 3D directional data, often used for transformations and forces.</li>
+            <li>Booleans: Input values that are either "True" or "False" (used to control conditional behavior).</li>
+            <li>Strings: Text data used for labels, file paths, or other non-numeric input.</li>
+            <li>Lists: Arrays or sequences of data that can represent multiple items at once, such as a series of points or numbers.</li>
+            <li>Colours: Input values for color properties (usually RGB values).</li>
+        </ul>
+
+        <h3>What Kinds of Parameters Will Be Output?</h3>
+        <p>Similar to input parameters, output parameters in Grasshopper can represent various data types. Some common output parameters include:</p>
+        <ul>
+            <li>Geometry: The resulting shapes or forms generated by the definition, such as points, curves, surfaces, or meshes.</li>
+            <li>Vectors: Output vectors that represent movement, direction, or forces in the model.</li>
+            <li>Numbers: Calculated numerical values, such as measurements, angles, or any other type of scalar output.</li>
+            <li>Lists: Collections of items that are processed or transformed, often used to represent arrays of values or geometry.</li>
+            <li>Booleans: Output that indicates a true or false condition based on logic or computations.</li>
+            <li>Text (Strings): Output of string values, such as names, labels, or file paths.</li>
+        </ul>
+
+        <h3>How Do I Move a Grasshopper Definition into Rhino?</h3>
+        <p>To move a Grasshopper definition into Rhino, you can "bake" the geometry created in Grasshopper into Rhino's modeling environment. Baking allows you to convert the parametric objects from Grasshopper into actual Rhino objects that can be edited, rendered, or used for further modeling. Here's how to do it:</p>
+        <ol>
+            <li>Select the output geometry in your Grasshopper definition.</li>
+            <li>Right-click on the component that generates the geometry.</li>
+            <li>Choose "Bake" from the context menu.</li>
+        </ol>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Alexandria - All rights reserved</p>
+    </footer>
+</body>
+</html>
